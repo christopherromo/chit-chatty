@@ -1,259 +1,259 @@
 /* splash screen styles */
 
 .splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #2176FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    opacity: 1;
-    /* Start fully opaque */
-    transition: opacity 0.8s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #2176ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 1;
+  /* Start fully opaque */
+  transition: opacity 0.8s ease-in-out;
 }
 
 .splash-hidden {
-    opacity: 0;
-    /* Fade out */
+  opacity: 0;
+  /* Fade out */
 }
 
 .splash-logo {
-    color: #fff;
-    /* font-size: 80px; */
-    font-size: 10vw;
-    font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    /* Animation for logo */
+  color: #fff;
+  /* font-size: 80px; */
+  font-size: 10vw;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  /* Animation for logo */
 }
 
 /* For smaller screens (splash screen) */
 @media (max-width: 600px) {
-    .splash-logo {
-        height: 20vh;
-        font-size: 10vw;
-    }
+  .splash-logo {
+    height: 20vh;
+    font-size: 10vw;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 1200px) {
-    .splash-logo {
-        font-size: 8vw;
-    }
+  .splash-logo {
+    font-size: 8vw;
+  }
 }
 
 /* navbar styles */
 
 .floating-navbar {
-    background-color: #2176FF;
-    /* navbar color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* adds a shadow around navbar */
-    border-radius: 10px;
-    /* rounds out corners */
-    margin: 20px auto;
-    /* how far away is navbar from top of the page */
-    padding: 5px 20px;
-    /* 10px: how narrow is navbar, 20px: how much room between most outer icons & edge   */
-    max-width: 95%;
-    /* changes navbar length */
-    z-index: 1;
+  background-color: #2176ff;
+  /* navbar color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* adds a shadow around navbar */
+  border-radius: 10px;
+  /* rounds out corners */
+  margin: 20px auto;
+  /* how far away is navbar from top of the page */
+  padding: 5px 20px;
+  /* 10px: how narrow is navbar, 20px: how much room between most outer icons & edge   */
+  max-width: 95%;
+  /* changes navbar length */
+  z-index: 1;
 }
 
 /* navbar dropdown styles */
 .navbar .dropdown-menu {
-    /* Remains in document flow */
-    position: absolute;
-    /* Position directly below the button */
-    top: 100%;
-    left: 0;
-    margin-top: 0;
-    padding: 10px;
-    /* Rounding */
-    border-radius: 5px;
-    box-shadow: none;
-    transform: none;
-    transition: none;
-    /* Standard dropdown background */
-    background-color: white;
-    z-index: 1000;
-    /* Ensure it's on top of other elements */
+  /* Remains in document flow */
+  position: absolute;
+  /* Position directly below the button */
+  top: 100%;
+  left: 0;
+  margin-top: 0;
+  padding: 10px;
+  /* Rounding */
+  border-radius: 5px;
+  box-shadow: none;
+  transform: none;
+  transition: none;
+  /* Standard dropdown background */
+  background-color: white;
+  z-index: 1000;
+  /* Ensure it's on top of other elements */
 }
 
 /* dropdown menus style */
 .dropdown-menu {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    /* Subtle rounded corners */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    /* Soft shadow for the dropdown */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  /* Subtle rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  /* Soft shadow for the dropdown */
 }
 
 /* generate quiz style */
 .generate-quiz-btn .btn-warning {
-    padding: 6px 12px;
-    margin-left: 12px;
-    /* Adjusts the space between the dropdown and button */
+  padding: 6px 12px;
+  margin-left: 12px;
+  /* Adjusts the space between the dropdown and button */
 }
 
 /* Play Button Styles */
 .play-btn {
-    background: linear-gradient(145deg, #FFDD75, #FDCA40);
-    /* Light gradient for 3D effect */
-    border: none;
-    width: 150px;
-    /* Increased width */
-    height: 150px;
-    /* Increased height */
-    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.6);
-    /* Light from top-left */
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-    /* Smooth transition for all changes */
-    position: relative;
-    /* Ensures the button moves in place */
-    display: flex;
-    /* Ensure icon is centered */
-    justify-content: center;
-    /* Horizontally center icon */
-    align-items: center;
-    /* Vertically center icon */
+  background: linear-gradient(145deg, #ffdd75, #fdca40);
+  /* Light gradient for 3D effect */
+  border: none;
+  width: 150px;
+  /* Increased width */
+  height: 150px;
+  /* Increased height */
+  box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.3),
+    -4px -4px 10px rgba(255, 255, 255, 0.6);
+  /* Light from top-left */
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  /* Smooth transition for all changes */
+  position: relative;
+  /* Ensures the button moves in place */
+  display: flex;
+  /* Ensure icon is centered */
+  justify-content: center;
+  /* Horizontally center icon */
+  align-items: center;
+  /* Vertically center icon */
 }
 
 /* Adjust the Play Button when Active */
 .play-btn.active {
-    width: 200px;
-    /* Dynamic size when active */
-    height: 200px;
+  width: 200px;
+  /* Dynamic size when active */
+  height: 200px;
 }
 
 /* Play Button Hover Effect */
 .play-btn:hover {
-    transform: translateY(-10px);
-    /* Lift the button up by 10px */
-    box-shadow: 12px 12px 18px rgba(0, 0, 0, 0.4), -6px -6px 12px rgba(255, 255, 255, 0.7);
-    /* Stronger shadow for 3D lift */
+  transform: translateY(-10px);
+  /* Lift the button up by 10px */
+  box-shadow: 12px 12px 18px rgba(0, 0, 0, 0.4),
+    -6px -6px 12px rgba(255, 255, 255, 0.7);
+  /* Stronger shadow for 3D lift */
 }
 
 /* Icon inside the Play Button */
 .play-btn i {
-    font-size: 10px;
-    /* Increase the font size to make the triangle larger */
-    color: white;
-    position: relative;
-    z-index: 2;
-    /* Ensure the icon stays on top */
-    transform: translateZ(10px);
-    /* Lift the icon forward in the 3D space */
+  font-size: 10px;
+  /* Increase the font size to make the triangle larger */
+  color: white;
+  position: relative;
+  z-index: 2;
+  /* Ensure the icon stays on top */
+  transform: translateZ(10px);
+  /* Lift the icon forward in the 3D space */
 }
 
 /* More 3D effects */
 .play-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    /* Light reflection on the button */
-    background: rgba(255, 255, 255, 0.2);
-    /* Ensures this layer doesn't interfere with button clicks */
-    pointer-events: none;
-    transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* Light reflection on the button */
+  background: rgba(255, 255, 255, 0.2);
+  /* Ensures this layer doesn't interfere with button clicks */
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .play-btn:hover::before {
-    /* Increase light reflection on hover */
-    background: rgba(255, 255, 255, 0.3);
+  /* Increase light reflection on hover */
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Quiz Start */
 .card-title {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    font-size: clamp(10px, 5vw, 48px);
-    /* Dynamically adjusts font size between 24px and 48px */
-    color: #2176FF;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    word-wrap: break-word;
-    /* Ensures long words break */
-    text-align: center;
-    /* Centers the title */
-    width: 90%;
-    /* Ensures the title fits within the card */
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: clamp(10px, 5vw, 48px);
+  /* Dynamically adjusts font size between 24px and 48px */
+  color: #2176ff;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  /* Ensures long words break */
+  text-align: center;
+  /* Centers the title */
+  width: 90%;
+  /* Ensures the title fits within the card */
 }
-
 
 /* Quiz Question styles */
 
 /* Shared styling for all quiz headers */
 .quiz-header {
-    font-size: 5vw;
-    /* Dynamic font size based on viewport width */
-    color: #2176FF;
-    /* Consistent header color */
-    font-weight: bold;
-    /* Bold font for prominence */
-    text-align: center;
-    /* Center-align all headers */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    /* Add shadow for styling */
-    line-height: 1.2;
-    /* Ensure readability */
-    margin: 20px 0;
-    /* Consistent spacing */
+  font-size: 5vw;
+  /* Dynamic font size based on viewport width */
+  color: #2176ff;
+  /* Consistent header color */
+  font-weight: bold;
+  /* Bold font for prominence */
+  text-align: center;
+  /* Center-align all headers */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add shadow for styling */
+  line-height: 1.2;
+  /* Ensure readability */
+  margin: 20px 0;
+  /* Consistent spacing */
 }
 
 /* Adjust font size for smaller screens */
 @media (max-width: 768px) {
-    .quiz-header {
-        font-size: 6vw;
-        /* Slightly larger on small screens */
-    }
+  .quiz-header {
+    font-size: 6vw;
+    /* Slightly larger on small screens */
+  }
 }
 
 /* Adjust font size for larger screens */
 @media (min-width: 1200px) {
-    .quiz-header {
-        font-size: 3rem;
-        /* Fixed size for very wide screens */
-    }
+  .quiz-header {
+    font-size: 3rem;
+    /* Fixed size for very wide screens */
+  }
 }
-
 
 /* speech bubble for chit 
 created using ChatGPT: https://chatgpt.com/share/670d9db3-aab8-8003-9f19-bf0783aefd0e */
 
 .speech-bubble {
-    position: relative;
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    padding: 15px;
-    max-width: 1000px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 15px;
+  max-width: 1000px;
 }
 
 .speech-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 20px;
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-top-color: #f0f0f0;
-    border-bottom: 0;
-    border-left: 0;
-    margin-left: -10px;
-    margin-bottom: -20px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #f0f0f0;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
 }
 
 .center-button {
-    text-align: center;
+  text-align: center;
 }

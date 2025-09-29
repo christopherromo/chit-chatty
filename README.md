@@ -2,6 +2,18 @@
 
 This is a project created for my advanced software engineering class at UCCS (Fall 2024 Semester). It is a language learning application, and it was created by a team of 5.
 
+This app was built with the following tools:
+   - Django (Python)
+   - HTML, CSS, JavaScript
+   - OpenAI API
+   - Git/Github
+   - Github Project Board
+
+This app helped me learn the following:
+   - Agile Methodology
+   - Continuous Integration
+   - Collaboration with a Team
+
 ---
 # ChitChatty Language Learning Application
 
@@ -50,31 +62,39 @@ This is a project created for my advanced software engineering class at UCCS (Fa
 ---
 ## App Installation
 
-1. Clone the repository:
+1. Clone the repository.
+
+2. Create a virtual environment:
 
    ```bash
-   git clone https://github.com/yourusername/ChitChatty.git
+   python -m venv venv
+   source venv/bin/activate
    ```
 
-2. Install dependencies:
+3. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run migrations:
+4. Hook up OpenAI API key:
+
+   1. Create a .env file in the `chit-chatty-app/chitchatty/` directory.
+   2. On the first line, add `OPENAI_API_KEY=yourkeyhere`, replacing the `yourkeyhere` with your key.
+
+5. Run migrations:
 
    ```bash
    python manage.py migrate
    ```
 
-4. Run the server:
+6. Run the server:
 
    ```bash
    python manage.py runserver
    ```
 
-6. Access the app at `http://127.0.0.1:8000`.
+7. Access the app at `http://127.0.0.1:8000`.
 
 ---
 ## App Testing

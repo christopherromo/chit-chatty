@@ -1,41 +1,65 @@
-{% extends "home/base_template.html" %}
-{% load static %}
-
-{% block content %}
+{% extends "home/base_template.html" %} {% load static %} {% block content %}
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow">
-                <div class="card-header" style="background-color: #2176FF; color: white; display: flex; justify-content: space-between; align-items: center;">
-                    <h3>{{ selected_language }} Word of the Day:&emsp; <strong>{{ word_of_the_day }}</strong></h3>
-                    <!-- <button id="ttsButton" class="btn btn-light">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div
+          class="card-header"
+          style="
+            background-color: #2176ff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <h3>
+            {{ selected_language }} Word of the Day:&emsp;
+            <strong>{{ word_of_the_day }}</strong>
+          </h3>
+          <!-- <button id="ttsButton" class="btn btn-light">
                         <i class="bi bi-volume-up-fill" style="color: #2176FF;"></i>
                     </button> -->
-                </div>
-                <div class="card-body">
-                    {% if error %}
-                        <p class="alert alert-danger">{{ error }}</p>
-                    {% else %}
-                        {% if result %}
-                            <p>{{ result }}</p>
-                            <a href="{% url 'index' %}" class="btn mt-3" style="background-color: #FFC600; color: black;" >Back to Home</a>
-                        {% else %}
-                            <form method="post" class="mt-3">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <label for="user_guess" class="form-label">Enter your guess:</label>
-                                    <input type="text" id="user_guess" name="user_guess" class="form-control" placeholder="Your guess here">
-                                </div>
-                                <button type="submit" class="btn btn-primary mt-3" style="background-color: #FFC600; color: black;"> 
-                                    <i class="bi bi-send-fill"></i> Submit
-                                </button>                                
-                            </form>
-                        {% endif %}
-                    {% endif %}
-                </div>
-            </div>
         </div>
+        <div class="card-body">
+          {% if error %}
+          <p class="alert alert-danger">{{ error }}</p>
+          {% else %} {% if result %}
+          <p>{{ result }}</p>
+          <a
+            href="{% url 'index' %}"
+            class="btn mt-3"
+            style="background-color: #ffc600; color: black"
+            >Back to Home</a
+          >
+          {% else %}
+          <form method="post" class="mt-3">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="user_guess" class="form-label"
+                >Enter your guess:</label
+              >
+              <input
+                type="text"
+                id="user_guess"
+                name="user_guess"
+                class="form-control"
+                placeholder="Your guess here"
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary mt-3"
+              style="background-color: #ffc600; color: black"
+            >
+              <i class="bi bi-send-fill"></i> Submit
+            </button>
+          </form>
+          {% endif %} {% endif %}
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- <script>
@@ -55,6 +79,5 @@
         }
     });
 </script> -->
-
 
 {% endblock %}
