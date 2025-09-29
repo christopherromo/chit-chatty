@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Member, Quiz, Question
 
-
 # Serializer for the Member model
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:

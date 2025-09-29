@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-
 # For user registration
 class CreateUserForm(UserCreationForm):
     class Meta:

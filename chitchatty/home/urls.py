@@ -13,7 +13,6 @@ router.register(r'members', MemberViewSet, basename = 'members')
 router.register(r'quizzes', QuizViewSet, basename = 'quizzes')
 router.register(r'questions', QuestionViewSet, basename = 'questions')
 
-
 urlpatterns = [
     # Default path (Home)
     path('', views.index, name='index'),
@@ -54,7 +53,7 @@ urlpatterns = [
     # Path for editing account details
     path('update_account_details/', views.update_account_details, name='update_account_details'),  # noqa: E501
 
-    # path for selecting language
+    # Path for selecting language
     path('set_language/', views.set_language, name='set_language'),
 
 ]

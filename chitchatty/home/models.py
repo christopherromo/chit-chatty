@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from django.utils.translation import gettext_lazy as _
-
 
 # Create your models here.
 
@@ -13,28 +11,21 @@ class Quiz(models.Model):
     difficulty = models.CharField(max_length=20, default="Easy")
 
     # Link quiz to user (optional, uncomment to use)
-    user = models.ForeignKey('Member', on_delete=models.CASCADE,
-                             null=True, blank=True)
+    user = models.ForeignKey('Member', on_delete=models.CASCADE, null=True, blank=True)
 
     # Holds all questions in the model
-    questions = models.ManyToManyField('Question',
-                                       related_name='quiz_questions')
+    questions = models.ManyToManyField('Question', related_name='quiz_questions')
 
     # For quiz tracking
     is_active = models.BooleanField(default=True)
     is_completed = models.BooleanField(default=False)
     score = models.IntegerField(null=True, blank=True)
-    curr_question = models.ForeignKey(
-                                      'Question',
-                                      on_delete=models.SET_NULL,
-                                      null=True,
-                                      blank=True)
+    curr_question = models.ForeignKey('Question', on_delete=models.SET_NULL, null=True, blank=True)
     correct_count = models.IntegerField(default=0)
     incorrect_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
-
 
 # Class model
 class Question(models.Model):
@@ -46,7 +37,6 @@ class Question(models.Model):
 
     def __str__(self):
         return self.translation_question
-
 
 # User model
 class Member(models.Model):
@@ -68,14 +58,12 @@ class Member(models.Model):
     def __str__(self):
         return self.userName
 
-
 # Tracks last reset for streaks (since our servers aren't always running)
 class LastStreakReset(models.Model):
     lastReset = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"Last streak reset was at: {self.lastReset}"
-
 
 # Word of the day checker (unique for each user)
 # Ensures that every language can only be generated once a day. Resets at midnight.  # noqa: E501

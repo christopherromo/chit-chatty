@@ -32,6 +32,7 @@
 }
 
 /* For smaller screens (splash screen) */
+
 @media (max-width: 600px) {
   .splash-logo {
     height: 20vh;
@@ -64,6 +65,7 @@
 }
 
 /* navbar dropdown styles */
+
 .navbar .dropdown-menu {
   /* Remains in document flow */
   position: absolute;
@@ -84,6 +86,7 @@
 }
 
 /* dropdown menus style */
+
 .dropdown-menu {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -94,6 +97,7 @@
 }
 
 /* generate quiz style */
+
 .generate-quiz-btn .btn-warning {
   padding: 6px 12px;
   margin-left: 12px;
@@ -101,6 +105,7 @@
 }
 
 /* Play Button Styles */
+
 .play-btn {
   background: linear-gradient(145deg, #ffdd75, #fdca40);
   /* Light gradient for 3D effect */
@@ -126,6 +131,7 @@
 }
 
 /* Adjust the Play Button when Active */
+
 .play-btn.active {
   width: 200px;
   /* Dynamic size when active */
@@ -133,6 +139,7 @@
 }
 
 /* Play Button Hover Effect */
+
 .play-btn:hover {
   transform: translateY(-10px);
   /* Lift the button up by 10px */
@@ -142,6 +149,7 @@
 }
 
 /* Icon inside the Play Button */
+
 .play-btn i {
   font-size: 10px;
   /* Increase the font size to make the triangle larger */
@@ -154,6 +162,7 @@
 }
 
 /* More 3D effects */
+
 .play-btn::before {
   content: "";
   position: absolute;
@@ -175,6 +184,7 @@
 }
 
 /* Quiz Start */
+
 .card-title {
   position: absolute;
   top: 20px;
@@ -195,6 +205,7 @@
 /* Quiz Question styles */
 
 /* Shared styling for all quiz headers */
+
 .quiz-header {
   font-size: 5vw;
   /* Dynamic font size based on viewport width */
@@ -213,6 +224,7 @@
 }
 
 /* Adjust font size for smaller screens */
+
 @media (max-width: 768px) {
   .quiz-header {
     font-size: 6vw;
@@ -221,6 +233,7 @@
 }
 
 /* Adjust font size for larger screens */
+
 @media (min-width: 1200px) {
   .quiz-header {
     font-size: 3rem;

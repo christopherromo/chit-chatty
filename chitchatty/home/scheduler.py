@@ -1,13 +1,10 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
-# from django_apscheduler.jobstores import DjangoJobStore
 from .tasks import resetStreak, resetWOTDTrackers
 from .models import LastStreakReset
 from django.utils import timezone
 
-
 def startScheduler():
-
     # Initialize the background scheduler
     scheduler = BackgroundScheduler()
 
@@ -15,7 +12,6 @@ def startScheduler():
     scheduler.add_job(
         resetStreak,
         trigger=CronTrigger(hour=0, minute=0),
-        # trigger=CronTrigger(minute='*'),  RUNS EVERY MINUTE. USE FOR TESTING
         id="reset_streak_job",
         replace_existing=True,
     )
@@ -24,7 +20,6 @@ def startScheduler():
     scheduler.add_job(
         resetWOTDTrackers,
         trigger=CronTrigger(hour=0, minute=0),
-        # trigger=CronTrigger(minute='*'), RUNS EVERY MINUTE. USE FOR TESTING
         id="reset_WOTD_Trackers_job",
         replace_existing=True,
     )

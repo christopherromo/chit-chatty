@@ -1,14 +1,12 @@
 from .models import Member, WordOfTheDayTracker
 import logging
 
-
 '''
-Daily midnight execution to reset the streak counter if condtns met
+Daily midnight execution to reset the streak counter if conditions met
 '''
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 
 def resetStreak():
     logger.info("resetStreak function triggered.")
@@ -24,7 +22,6 @@ def resetStreak():
         # Reset variable for next day
         member.hasCompletedQuiz = False
         member.save()
-
 
 def resetWOTDTrackers():
     logger.info("resetWOTDTrackers function triggered.")

@@ -5,7 +5,6 @@ from django.conf import settings
 # Configure OpenAI API key
 openai.api_key = settings.OPENAI_API_KEY
 
-
 def generate_translation_questions(proficiency, difficulty, source_lang, target_lang, num_questions, goal):  # noqa: E501
     prompt = (
         f"Generate NEW {num_questions} {source_lang} words, sentences, questions, or phrases at a {difficulty} difficulty level for a user with a proficiency level of {proficiency}. "
@@ -73,7 +72,6 @@ def generate_translation_questions(proficiency, difficulty, source_lang, target_
     print(f'Structured: {structured_output}')
     return structured_output
 
-
 def get_word_of_the_day(selected_language):
     prompt = (
         f"Generate a random word in {selected_language} along with its "
@@ -107,7 +105,6 @@ def get_word_of_the_day(selected_language):
 
     print(f'Structured Output: {structured_output}')
     return structured_output
-
 
 def daily_lesson_translation(word, selected_language):
     prompt = (

@@ -1,6 +1,5 @@
 from django.shortcuts import redirect
 
-
 # Restricts user access to certain areas if they already logged in
 # Redirects logged in user back to homepage
 def unauthenticatedUser(view_func):

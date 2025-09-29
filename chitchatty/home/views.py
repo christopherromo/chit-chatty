@@ -20,7 +20,6 @@ from rapidfuzz import fuzz
 import string
 from contractions import fix
 
-
 # Home Page View
 def index(request):
     if request.method == "POST":
@@ -54,7 +53,6 @@ def index(request):
     }
 
     return render(request, "home/index.html", context)
-
 
 # View for user registration
 # Takes the information from the form to make a 'Member'
@@ -93,7 +91,6 @@ def registerPage(request):
     context = {'form': form}
     return render(request, 'authentication/register.html', context)
 
-
 # View for logging in
 @unauthenticatedUser
 def loginPage(request):
@@ -108,11 +105,9 @@ def loginPage(request):
 
     return render(request, 'authentication/login.html', {'form': form})  # noqa: E501
 
-
 # View for the account details page of a user
 @login_required(login_url='login-page')
 def accountPage(request, userID):
-
     # Ensures that only the user can view their own account details page and not view others  # noqa: E501
     # Returns user back to homepage
     if (request.user.id != userID):
@@ -123,7 +118,6 @@ def accountPage(request, userID):
 
     # Go to the account page
     return render(request, 'authentication/account_details.html', {'member': member})  # noqa: E501
-
 
 # View for updating account details
 # The reason it's so long is because the 'User' object in the 'Member' object also has a username,  # noqa: E501
@@ -180,7 +174,6 @@ def update_account_details(request):
     # If the request method is not POST, redirect to homepage
     return redirect('index')
 
-
 def update_account(request):
     if request.method == 'POST':
         user = request.user.member
@@ -188,14 +181,12 @@ def update_account(request):
         email = request.POST.get('email')
         full_name = request.POST.get('full_name')
 
-
 # View for logging out
 # Redirects user back to the login-page no matter what (because returning render after logging out isn't executing for some reason)   # noqa: E501
 @login_required(login_url='login-page')
 def logout(request):
     auth_logout(request)
     return render(request, 'home/index.html')
-
 
 # Quiz Views
 @login_required
@@ -219,7 +210,6 @@ def quiz(request):
                 'quiz': next_quiz,
                 'error': "No questions available for this quiz."
             }
-
         else:
             request.session['question_id'] = first_question.id
 
@@ -235,7 +225,6 @@ def quiz(request):
         context = {'error': "No quiz available."}
 
     return render(request, 'quiz/quiz_question.html', context)
-
 
 @login_required
 def generate_quiz(request):
@@ -299,7 +288,6 @@ def generate_quiz(request):
 
     return redirect('index')
 
-
 # Quiz Start View
 @login_required
 def quiz_start(request):
@@ -316,7 +304,6 @@ def quiz_start(request):
         'length': length,
     }
     return render(request, 'quiz/quiz_start.html', context)
-
 
 # Views to prompt the user with quiz options
 @login_required
@@ -338,7 +325,6 @@ def continue_quiz(request):
     }
     return render(request, 'quiz/quiz_start.html', context)
 
-
 @login_required
 def exit_quiz(request):
     quiz_id = request.session.get("quiz_id")
@@ -357,7 +343,6 @@ def exit_quiz(request):
         return redirect('index')  # Redirect to the index page
 
     return JsonResponse({"error": "No active quiz to exit"}, status=400)  # noqa: E501
-
 
 # Quiz Check Answer View
 @login_required
@@ -409,7 +394,6 @@ def quiz_check_answer(request):
     # Redirect to the quiz page if the request method is not POST
     return redirect('quiz')
 
-
 # Quiz Correct View
 @login_required
 def quiz_correct(request):
@@ -445,7 +429,6 @@ def quiz_correct(request):
 
     return render(request, 'quiz/quiz_correct.html', context)
 
-
 # Quiz Incorrect View
 @login_required
 def quiz_incorrect(request):
@@ -475,7 +458,6 @@ def quiz_incorrect(request):
     }
 
     return render(request, 'quiz/quiz_incorrect.html', context)
-
 
 # Quiz Recap View
 @login_required
@@ -544,7 +526,6 @@ def quiz_recap(request):
 
     return render(request, 'quiz/quiz_recap.html', context)
 
-
 # Next/Try again should send POST or SOME kind of request after question feedback to update and load next question  # noqa: E501
 def next_question(request):
     # Get the current question ID from the POST request
@@ -586,7 +567,6 @@ def next_question(request):
 
     # No more questions left, redirect to the recap page or finish quiz
     return redirect('quiz_recap')
-
 
 # word of the day using openai
 @login_required(login_url='login-page')
@@ -660,10 +640,8 @@ def word_of_the_day(request):
         'result': result,
     })
 
-
 @csrf_exempt
 def set_language(request):
-
     if request.method == "POST":
         data = json.loads(request.body)
         language = data.get('language')
@@ -673,7 +651,6 @@ def set_language(request):
         return JsonResponse({"success": True})
 
     return JsonResponse({"success": False}, status=400)
-
 
 # daily lesson
 def daily_lesson(request):
@@ -699,23 +676,19 @@ def daily_lesson(request):
 
     return render(request, template_name, context)
 
-
 '''
 REST Viewsets
 '''
-
 
 # Viewset for the Member model
 class MemberViewSet(ModelViewSet):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
 
-
 # Viewset for the Quiz Model
 class QuizViewSet(ModelViewSet):
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer
-
 
 # Viewset for the Question Model
 class QuestionViewSet(ModelViewSet):

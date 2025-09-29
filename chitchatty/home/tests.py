@@ -8,14 +8,11 @@ from home.tasks import resetStreak
 from unittest.mock import patch
 import json
 
-
 # Test for user registration
 # Checks if user is able to have their information successfully
 # stored in the system. Afterwards, checks if they can successfully log in
 class UserRegistrationLogin(TestCase):
-
     def test_register_login(self):
-
         # Data that will be used to register the user
         registrationData = {
             'username': 'TestUser',
@@ -42,10 +39,8 @@ class UserRegistrationLogin(TestCase):
         # Ensure user is redirected to the homepage after successful login
         self.assertEqual(response.status_code, 302)
 
-
 # Test for seeing if a user can log out
 class UserLogoutTest(TestCase):
-
     def test_logout(self):
         # Create a user and member to test on
         user = User.objects.create_user(username='Test1', password='Test!@#$')
@@ -64,11 +59,9 @@ class UserLogoutTest(TestCase):
         # Step 2: Ensure user is redirected after logging out
         self.assertTemplateUsed(response, 'home/index.html')
 
-
 # Test for seeing if a logged in user will be redirected back
 # to the home page if they try to access the register link
 class UserFailSafe(TestCase):
-
     def test_goodCatch(self):
         # Create a test user and member to test on
         user = User.objects.create_user(username='Test1', password='Test!@#$')
@@ -87,7 +80,6 @@ class UserFailSafe(TestCase):
         self.assertEqual(response.status_code, 302)
         # Check if user was redirected back to the homepage
         self.assertRedirects(response, reverse('index'))
-
 
 # Test for seeing if a logged in user can update their account settings
 class AccountDetailsTest(TestCase):
@@ -129,7 +121,6 @@ class AccountDetailsTest(TestCase):
 
         # Assert that the email has been updated
         self.assertEqual(updated_member.email, 'partialupdate@example.com')
-
 
 # Test for session data tracking (correct and incorrect answers)
 class QuizTests(TestCase):
@@ -197,7 +188,6 @@ class QuizTests(TestCase):
         self.assertTrue(self.member.hasCompletedQuiz, "Member should be marked as having completed the quiz.")  # noqa: E501
         self.assertEqual(self.member.streakCount, 1, "Member's streak count should increment by 1.")  # noqa: E501
 
-
 # Tests for quiz continuation implementation
 class QuizExitAndContinueTests(TestCase):
     def setUp(self):
@@ -241,7 +231,6 @@ class QuizExitAndContinueTests(TestCase):
 
         self.assertContains(response, "Continue Quiz", msg_prefix="Index page should show 'Continue Quiz' option.")  # noqa: E501
 
-
 # Tests for resetting streak implementation
 class ResetStreakTests(TestCase):
     # Create members to use in tests
@@ -284,10 +273,8 @@ class ResetStreakTests(TestCase):
         resetStreak()
         self.assertEqual(Member.objects.count(), 0)
 
-
 # Test for answering the word of the day
 class WordOfTheDayTest(TestCase):
-
     def setUp(self):
         """
         Setup initial data for Word of the Day feature testing.
@@ -337,7 +324,6 @@ class WordOfTheDayTest(TestCase):
         self.assertNotIn('word_of_the_day', self.client.session)
         self.assertNotIn('english_translation', self.client.session)
 
-
 # Test for selecting a language
 class SetLanguageTests(TestCase):
     # Set up the test client and define the URL for the set language view
@@ -347,18 +333,14 @@ class SetLanguageTests(TestCase):
 
     def test_set_language_success(self):
         # Simulate a successful language change with a POST request
-        response = self.client.post(self.url,
-                                    json.dumps({'language': 'chinese'}),
-                                    content_type='application/json')
+        response = self.client.post(self.url, json.dumps({'language': 'chinese'}), content_type='application/json')
 
         self.assertEqual(response.status_code, 200)
         self.assertJSONEqual(response.content, {"success": True})
         self.assertEqual(self.client.session['selected_language'], 'chinese')
 
-
 # Tests for answering the lesson of the day
 class DailyLessonViewTests(TestCase):
-
     def setUp(self):
         # Set up the client
         self.client = Client()
