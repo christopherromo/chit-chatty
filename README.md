@@ -1,6 +1,6 @@
 ## Important Info
 
-This is a project created for my advanced software engineering class at UCCS (Fall 2024 Semester). It is a language learning application, and it was created by a team of 5.
+This is a project created for my "Advanced Software Engineering" (CS 4300) class at UCCS (Fall 2024 Semester). It is a language learning application, and it was created by a team of 5.
 
 This app was built with the following tools:
    - Django (Python)
