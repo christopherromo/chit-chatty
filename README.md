@@ -1,68 +1,41 @@
-## Important Info
+# Chit-Chatty Language Learning Application
 
-This is a project created for my "Advanced Software Engineering" (CS 4300) class at UCCS (Fall 2024 Semester). It is a language learning application, and it was created by a team of 5.
+##### Created by Darion Badillo, Andrew Douangprachanh, Irving Reyes Bravo, Naomi Rodriguez, and Christopher Romo
+##### CS 4300 Advanced Software Engineering : Group 5 : Fall 2024
 
-This app was built with the following tools:
+---
+
+**Chit-Chatty** is a language learning application designed to help users improve their language skills through dynamically-generated quizzes and pre-made lessons. The app uses the OpenAI API and user input to create custom quizzes. "Word of the Day" and daily lessons encourage continuous learning. Multiple languages are supported. The app aims to provide an engaging and personalized learning experience by catering the learning material to your preferences.
+
+## Technologies
+
    - Django (Python)
-   - HTML, CSS, JavaScript
    - OpenAI API
-   - Git/Github
-   - Github Project Board
+   - HTML
+   - CSS
+   - JavaScript
 
-This app helped me learn the following:
-   - Agile Methodology
-   - Continuous Integration
-   - Collaboration with a Team
+## Features
 
-*Please note that there may be a few bugs present.*
+   - **User Authentication:** Users can create accounts, login and logout, access specific features reserved for account holders, and see their account information.
 
----
-# ChitChatty Language Learning Application
+   - **Quiz Generation:** Quizzes are generated through internal prompts using OpenAI API. Users can customize their quiz with options such as difficulty, proficiency, length of quiz, etc.
 
-#### Created by Darion Badillo, Andrew Douangprachanh, Irving Reyes Bravo, Naomi Rodriguez, and Christopher Romo
-#### CS 4300 Advanced Software Engineering : Group 5 : Fall 2024
+   - **Quiz Management:** User progress is tracked throughout the duration of the quiz, allowing for users to stop and restart the quiz without losing progress.
 
----
-## App Overview
+   - **Quiz Recap:** At the end of the quiz, the user is given a summary of their results, that being the amount of correct and incorrect answers along with messages based on the score.
 
-**ChitChatty** is a language learning platform designed to help users improve their language skills through custom quizzes and pre-made lessons. The app integrates AI tools and user input to generate custom quizzes. "Word of the Day" and daily lessons encourage continuous learning. Multiple languages are supported. The app aims to provide an engaging and personalized learning experience by adapting the learning material to your preferences.
+   - **Word of the Day:** Single word daily quiz based on the selected language.
 
----
-## App Features
+   - **Daily Lesson:** Lessons based on a theme that cycle out daily. It consists of cards composed of an image and a description in the selected language.
 
-### 1. User Authentication
-   - User registration, login, and session management.
-   - Users have their own account page with saved data like streaks.
+## Reflection
 
-### 2. Dynamic AI Quiz Generation
-   - Translation questions are created based on the options the user selects.
-   - User can select their preferred Language, Proficiency, Difficulty, Length of Quiz, and Goal of Quiz.
+**The Process:** This project was created by a team of 5 for our advanced software engineering class. We started by learning how to work as group, which mainly consisted of setup and learning project management tools. For this project, we used DevEdu as our cloud development environment, a shared Git repository, Zenhub as our project board, Kritik for assessment of our teammates, and Discord for team communication. We followed the Agile Methodology, building the app over four two-week sprints. We found a flow for our sprints, starting with delegation of tasks from the project board. Design came next, where we would meet up and share ideas for how new features would look and interact with existing features. After that, we would build solutions by making personal branches, dealing with merge conflicts, and creating pull requests once finished. During development, we documented our changes and additions, and at the end we grouped these together to create a changelog.
 
-### 3. Quiz Management
-   - User progress is tracked during quizzes.
-   - Session data is maintained for correct and incorrect answers.
-   - Quiz can be stopped and restarted.
+**Key Takeaways:** Over the course of the semester, we learned many things about software engineering. Concepts like the Agile Methodology and Continuous Integration shaped how we worked on the application. Project management tools like Zenhub (Project Board) and Git/GitHub helped us to organize our project and plan for new features. We had to learn how to work as a team, and we did this by frequent communication through Discord and in-person meetings, assessment of our teammates through Kritik to ensure equal contribution, and choosing a project leader for each sprint to lead the group. With Django chosen as our framework, we learned a lot about the MVT architecture and Python in general. We also touched on HTML, CSS, and JavaScript for the creation of the templates. We worked with another team who acted as "the customers", and we had to ensure we were delivering key features. Overall, we learned software engineering encapsulates a lot of concepts, including project management, design, implementation, documentation, communication, and much more.
 
-### 5. Quiz Recap
-   - The user’s score is displayed at the end of each quiz.
-   - Recap page provides a summary of the quiz, including correct and incorrect answers and overall performance.
-
-### 6. Word of the Day
-   - Single word daily quiz based on selected language.
-   - Immediate feedback provided based on answer.
-
-### 7. Daily Lesson
-   - Lesson based on a theme to encourage learning.
-   - 8 cards with images appear with translations, allowing for visual learning.
-   - Lessons change out daily.
-
-### 8. Friendly UI
-   - Clean and user-friendly interface with Bootstrap-based styling.
-   - Responsive pages to adapt to user's browser.
-   - Styled to foster a fun learning atmosphere.
-
----
-## App Installation
+## Running the Project
 
 1. Clone the repository.
 
@@ -98,73 +71,24 @@ This app helped me learn the following:
 
 7. Access the app at `http://127.0.0.1:8000`.
 
----
-## App Testing
+## Testing
 
-### How to Test
-1. Install this Django environment's required packages:
-	```bash
-   pip install -r requirements.txt
-   ```
-2. Apply all database migrations before running tests:
+1. Apply database migrations:
+
 	```bash
  	python manage.py migrate
  	```
-3. Run the test suite to execute the defined tests:
+
+2. Run the test suite:
+
 	```bash
  	python manage.py test
  	```
 
-### List of Tests
-1. **User Registration and Login**: Tests user registration and login process.
-	- Steps:
-	- Registers a user with provided credentials.
-	- Logs the user in and verifies successful redirection to the homepage.
-2. **User Logout**: Tests the logout functionality.
-	- Steps:
-	- Logs in a user, then verifies they are logged out and redirected to the homepage.
-3. **User Fail-Safe**: Ensures a logged-in user is redirected to the homepage if they try to access the registration page.
-	- Steps:
-	- Logs in a user and tries to access the registration page.
-	- Verifies they are redirected back to the homepage.
-4. **Account Details Update**: Tests updating account details (e.g., email).
-	- Steps:
-	- Loads the account details page.
-	- Updates the email field and verifies the changes are saved and reflected on the account page.
-5. **Quiz Generation and Completion**: Tests the generation and completion of quizzes.
-	- Steps:
-	- Generates a quiz with specific parameters (difficulty, number of questions).
-	- Verifies the quiz is created and contains questions.
-	- Completes the quiz and checks if streaks are updated and the quiz is marked as completed.
-6. **Quiz Exit and Continuation**: Tests the quiz exit and continuation functionality.
-	- Steps:
- 	- Exits an ongoing quiz and verifies the quiz status.
-	- Verifies that the option to continue the quiz is available on the homepage.
-7. **Streak Reset**: Tests resetting streaks for users who have or have not completed a quiz.
-	- Steps:
-	- Resets streaks for users who haven’t completed a quiz.
-	- Verifies that streaks are reset and that users who have completed quizzes retain their streaks.
-8. **Word of the Day**: Tests the functionality of the Word of the Day feature.
-	- Steps:
-	- Verifies the correct display of the Word of the Day and its translation.
-	- Tests the user's ability to correctly guess the word and receive feedback.
-	Verifies the session is cleared after a correct guess.
-9. **Set Language**: Tests that the user an succesfully change the selected language in the session.
-	- Steps:
-	- Defines the url for the set language view after setting up a test client.
-	- Simulates a successful language change with a POST request.  
-10. **Daily Lesson**: Tests the functionality of the Daily Lesson feature.
-	- Steps:
-	- Verifies the mocked day of the year (should be 345 for Dec 10).
-	- Make the request without setting a session language (default to Arabic).
-	- Verifies the expected lesson based on the mocked day of the year.
-
----
-## App Changelog
+## Changelog
 
 Listed below are all changes made to the app based on sprint.
 
----
 ## Sprint 1 (10/17/2024)
 
 ### Quiz Logic - Darion Badillo
@@ -255,7 +179,6 @@ Listed below are all changes made to the app based on sprint.
    - splash screen functionality is now in splash screen block in `index.html`
    - navbar in navbar block in `index.html`
 
----
 ## Sprint 2 (10/29/2024)
 
 ### Quiz Logic Bug Fixing - Darion Badillo
@@ -331,7 +254,6 @@ Listed below are all changes made to the app based on sprint.
    - `quiz_recap.html` to include a home button (button takes you to index for better flow)
    - generate_quiz view in `views.py` (added logic to incorporate the new functions in services.py) (now generates questions using open AI) (uses a loop to translate each sentence, create a question object for each, and adds those objects to a quiz object)
 
----
 ## Sprint 3 (11/12/2024)
 
 ### Index Overhaul - Darion Badillo & Christopher Romo
@@ -392,7 +314,6 @@ Listed below are all changes made to the app based on sprint.
    - When clicking any of the drop-downs, the flag would disappear. Flag is now fixed once selected
    - word_of_the_day view to work with openai logic
 
----
 ## Sprint 4 (12/10/2024)
 
 ### Quiz Logic Bug Fixing / flake8 - Darion Badillo
