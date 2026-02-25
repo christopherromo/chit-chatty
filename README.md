@@ -3,6 +3,8 @@
 ##### Created by Darion Badillo, Andrew Douangprachanh, Irving Reyes Bravo, Naomi Rodriguez, and Christopher Romo
 ##### CS 4300 Advanced Software Engineering : Group 5 : Fall 2024
 
+---
+
 **Chit-Chatty** is a language learning application designed to help users improve their language skills through dynamically-generated quizzes and pre-made lessons. The app uses the OpenAI API and user input to create custom quizzes. "Word of the Day" and daily lessons encourage continuous learning. Multiple languages are supported. The app aims to provide an engaging and personalized learning experience by catering the learning material to your preferences.
 
 ## Technologies
@@ -123,8 +125,8 @@ Listed below are all changes made to the app based on sprint.
 ### Account Features - Andrew Douangprachanh
 
 **ADDED**
-   - the ability for the user to create an account and log in to the website
-   - two new templates in the "authentication" folder called `login.html` and `register.html`
+   - The ability for the user to create an account and log in to the website
+   - Two new templates in the "authentication" folder called `login.html` and `register.html`
    - `forms.py`, which allows for defining a form with information that must be filled by the user to register
    - `decorators.py`. So far, it only has one decorator that prevents logged-in users from accessing the registration and login links
    - pytests to ensure that logging in, logging out, and failsafes work correctly
@@ -163,19 +165,19 @@ Listed below are all changes made to the app based on sprint.
 ### Quiz Templates - Christopher Romo
 
 **ADDED** 
-   - quiz url (linked to play button), quiz_correct url, quiz_incorrect url, quiz_recap url
-   - quiz view (linked to play button), quiz_correct view, quiz_incorrect view, quiz_recap view
+   - Quiz url (linked to play button), quiz_correct url, quiz_incorrect url, quiz_recap url
+   - Quiz view (linked to play button), quiz_correct view, quiz_incorrect view, quiz_recap view
    - `quiz_question.html` (linked to play button), `quiz_correct.html`, `quiz_incorrect.html`, `quiz_recap.html` 
-   - splash screen block in `base_template.html`
-   - navbar block in `base_template.html`
-   - new general navbar in `base_template.html`
+   - Splash screen block in `base_template.html`
+   - Navbar block in `base_template.html`
+   - New general navbar in `base_template.html`
 
 **UPDATED**
    - "static/images/", "static/`styles.css`" to: "static/home/images/", "static/home/css/`styles.css`"
-   - all {% static %} tags to match new file hierarchy
-   - all <style></style> tags have been moved to `styles.css`
-   - splash screen functionality is now in splash screen block in `index.html`
-   - navbar in navbar block in `index.html`
+   - All {% static %} tags to match new file hierarchy
+   - All <style></style> tags have been moved to `styles.css`
+   - Splash screen functionality is now in splash screen block in `index.html`
+   - Navbar in navbar block in `index.html`
 
 ## Sprint 2 (10/29/2024)
 
@@ -203,11 +205,11 @@ Listed below are all changes made to the app based on sprint.
       - Schedules a daily midnight job to reset streak information
       - If the server is shut off and it is turned on the next day, it force runs the reset streak function
    - `tasks.py`: The only task in this file is the one that contains the logic to reset streak information for users. Executes every day at midnight
-   - a new model called LastStreakReset to record the last streak reset time, accommodating server downtime
+   - A new model called LastStreakReset to record the last streak reset time, accommodating server downtime
 
 **UPDATED**
-   - the Member model to hold streak information such as if they have completed a quiz for the day and the current streak count
-   - the home page view to display user streak data when logged in
+   - The Member model to hold streak information such as if they have completed a quiz for the day and the current streak count
+   - The home page view to display user streak data when logged in
    - `index.html` to display the streak count when it is greater than 0
    - `apps.py`: Added code to start scheduler.py to run whenever the app starts
    - `tests.py`: Added new tests to ensure that the streak reset function works properly and adjusts the database as needed
@@ -229,16 +231,16 @@ Listed below are all changes made to the app based on sprint.
 ### Language Implementation - Naomi Rodriguez
 
 **ADDED**
-   - Javascript to update the flag image to selected language
-   - Javascript to store language selection
+   - JavaScript to update the flag image to selected language
+   - JavaScript to store language selection
    - set_language to store the selected language in the user's session and returns a JSON response
 
 **UPDATED**
-   - static Spanish flag image to dropdown selection
+   - Static Spanish flag image to dropdown selection
    - generate_quiz view to use selected language rather than a hardcoded language. Also now uses a selected difficulty rather than a hardcoded one
    - word_of_the_day view to use selected language rather than a hard coded one
-   - added set_language path
-   - updated `word_of_the_day.html` to verify language selection has been successful
+   - set_language path
+   - `word_of_the_day.html` to verify language selection has been successful
 
 ### AI Integration - Christopher Romo
 
@@ -246,7 +248,7 @@ Listed below are all changes made to the app based on sprint.
    - `services.py` (new file to handle open AI logic)
    - generate_translation_questions function (prompts open AI to generate ten questions based on a number of incoming parameters such as difficulty, source language, etc.)
    - translate_sentence function (prompts open AI to translate the incoming phrase to the base language)
-   - open AI organization (invited all teammates to join the organization so they can all have API keys and added $15 worth of credits so that we can all test the AI)
+   - OpenAI organization (invited all teammates to join the organization so they can all have API keys and added $15 worth of credits so that we can all test the AI)
 
 **UPDATED**
    - `quiz_recap.html` to include a home button (button takes you to index for better flow)
@@ -283,7 +285,7 @@ Listed below are all changes made to the app based on sprint.
 **UPDATED**
    - `models.py`: Added two new fields to the Member model: dateJoined and longestStreak
    - `views.py`: Added a new view called update_account_details that updates the fields modified by the user on their account details page
-   - quiz recap view: Added logic for calculating the longest streak
+   - Quiz recap view: Added logic for calculating the longest streak
    - `urls.py`: Added a URL for updating account details
    - `index.html`: For logged-in users, a dropdown that allows them to view their profile information or log out
 
@@ -305,12 +307,12 @@ Listed below are all changes made to the app based on sprint.
    - Cleaned up `index.html`. Language selection is now it's own section
    - Moved the flag dropdown from `index.html` into it's own html file to clean up code. Updated dropdown menu to be scrollable
    - Ten new flags users can select from
-   - get_word_of_the_day function using openai rather than using random words API
+   - get_word_of_the_day function using OpenAI API rather than using random words API
 
 **UPDATED**
-   - Added Server Side Includes (SSI) to clear up javascript from `index.html`
+   - Added Server Side Includes (SSI) to clear up JavaScript from `index.html`
    - When clicking any of the drop-downs, the flag would disappear. Flag is now fixed once selected
-   - word_of_the_day view to work with openai logic
+   - word_of_the_day view to work with OpenAI API logic
 
 ## Sprint 4 (12/10/2024)
 
@@ -367,7 +369,7 @@ Listed below are all changes made to the app based on sprint.
    - Seven new lesson templates with images of basic language learning topics
    - templatetags folder to hold translation logic for html
    - Lesson templates responsive to all screen sizes
-   - function_name in `services.py` using openai API to translate given words
+   - function_name in `services.py` using OpenAI API to translate given words
    - daily_lesson function in `view.py` to select language and translate given words. Templates cycle daily
 
 **UPDATED**
@@ -378,7 +380,7 @@ Listed below are all changes made to the app based on sprint.
    - Splash Screen
       - Responsive to all screen sizes
       - Stripe along the top of the screen now the same color as the splash screen
-   - default language set to Arabic for quiz generation, matching the rest of the default options
+   - Default language set to Arabic for quiz generation, matching the rest of the default options
    - Added an onerror check so that if currentFlag function fails to load, the Arabic flag will appear as default
 
 ### UI Updates / Responsiveness / README Overhaul - Christopher Romo
