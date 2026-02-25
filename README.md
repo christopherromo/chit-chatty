@@ -99,7 +99,7 @@ Listed below are all changes made to the app based on sprint.
       - translation_question to hold the source language phrase
       - correct_answer to store the correct translation
       - source_language and target_language fields
-      - difficulty to categorize questions into Easy, Medium, or Hard
+      - Difficulty to categorize questions into Easy, Medium, or Hard
    - A M:N relationship between quizzes and generated questions
    - Management/Commands directory to manage dynamic question loading
    - Implemented a command that adds 30 translation questions (10 for each difficulty) into the database
@@ -129,7 +129,7 @@ Listed below are all changes made to the app based on sprint.
    - Two new templates in the "authentication" folder called `login.html` and `register.html`
    - `forms.py`, which allows for defining a form with information that must be filled by the user to register
    - `decorators.py`. So far, it only has one decorator that prevents logged-in users from accessing the registration and login links
-   - pytests to ensure that logging in, logging out, and failsafes work correctly
+   - Pytests to ensure that logging in, logging out, and failsafes work correctly
 
 **UPDATED**
    - `models.py` to include a new model called "Member," which represents a single user and contains fields such as first and last name
@@ -153,7 +153,7 @@ Listed below are all changes made to the app based on sprint.
 ### Word of the Day - Naomi Rodriguez
 
 **ADDED**
-   - installed requests and updates `requirements.txt`
+   - Installed requests and updates `requirements.txt`
    - Random Words API in order to fetch a random word in Spanish as well as its English translation. Also supports Dutch, French, Chinese, Japanese, and Turkish
    - `word_of_the_day.html` and the ability to redirect to this page from the navbar
 
@@ -187,7 +187,7 @@ Listed below are all changes made to the app based on sprint.
    - Adjusted AI prompting and AI logic overall
       - Combined both functions into one function
       - Parsing logic/regex updated
-      - AI now gives more than just questions. (sentences, phrases, questions, words, etc)
+      - AI now gives more than just questions (sentences, phrases, questions, words, etc)
       - Also generates title and description
    - Fixed Next Quiz logic. The button becomes active only when a quiz is generated or not completed
    - Added attributes to the Quiz model for tracking
