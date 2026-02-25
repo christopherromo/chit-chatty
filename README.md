@@ -3,8 +3,6 @@
 ##### Created by Darion Badillo, Andrew Douangprachanh, Irving Reyes Bravo, Naomi Rodriguez, and Christopher Romo
 ##### CS 4300 Advanced Software Engineering : Group 5 : Fall 2024
 
----
-
 **Chit-Chatty** is a language learning application designed to help users improve their language skills through dynamically-generated quizzes and pre-made lessons. The app uses the OpenAI API and user input to create custom quizzes. "Word of the Day" and daily lessons encourage continuous learning. Multiple languages are supported. The app aims to provide an engaging and personalized learning experience by catering the learning material to your preferences.
 
 ## Technologies
@@ -292,8 +290,8 @@ Listed below are all changes made to the app based on sprint.
 ### Quiz Logic Bug Fixing - Irving Reyes Bravo
 
 **ADDED**
-   - is_active boolean attribute (new attribute in Quiz model that seperates "saved for later" quizes)
-   - quiz_exit function (saves user's currentl session's quiz and redirects them to the homepage)
+   - is_active boolean attribute (new attribute in Quiz model that separates "saved for later" quizzes)
+   - quiz_exit function (saves user's current session's quiz and redirects them to the homepage)
    - quiz_continue function (prompts user to return to their previously specified quiz)
 
 **UPDATED**
@@ -406,4 +404,5 @@ Listed below are all changes made to the app based on sprint.
    - README Documentation for our app, making it more readable and informative
 
 ---
+
 # ٩( ᐛ)و
