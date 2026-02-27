@@ -5,7 +5,7 @@
 
 ---
 
-**Chit-Chatty** is a language learning application designed to help users improve their language skills through dynamically-generated quizzes and pre-made lessons. The app uses the OpenAI API and user input to create custom quizzes. "Word of the Day" and daily lessons encourage continuous learning. Multiple languages are supported. The app aims to provide an engaging and personalized learning experience by catering the learning material to your preferences.
+**Chit-Chatty** is a language learning application designed to help users improve their language skills through dynamically-generated quizzes and pre-made lessons. The app uses the OpenAI API and user input to create custom quizzes. "Word of the Day" and daily lessons encourage continuous learning. Multiple languages are supported for the quizzes, "Word of the Day", and daily lessons. The app aims to provide an engaging and personalized learning experience by catering the learning material to your preferences.
 
 ## Technologies
 
