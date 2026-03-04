@@ -33,7 +33,7 @@
 
 **The Process:** This project was created by a team of 5 for our advanced software engineering class. We started by learning how to work as group, which mainly consisted of setup and learning project management tools. For this project, we used DevEdu as our cloud development environment, a shared Git repository, Zenhub as our project board, Kritik for assessment of our teammates, and Discord for team communication. We followed the Agile Methodology, building the app over four two-week sprints. We found a flow for our sprints, starting with delegation of tasks from the project board. Design came next, where we would meet up and share ideas for how new features would look and interact with existing features. After that, we would build solutions by making personal branches, dealing with merge conflicts, and creating pull requests once finished. During development, we documented our changes and additions, and at the end we grouped these together to create a changelog.
 
-**Key Takeaways:** Over the course of the semester, we learned many things about software engineering. Concepts like the Agile Methodology and Continuous Integration shaped how we worked on the application. Project management tools like Zenhub (Project Board) and Git/GitHub helped us to organize our project and plan for new features. We had to learn how to work as a team, and we did this by frequent communication through Discord and in-person meetings, assessment of our teammates through Kritik to ensure equal contribution, and choosing a project leader for each sprint to lead the group. With Django chosen as our framework, we learned a lot about the MVT architecture and Python in general. We also touched on HTML, CSS, and JavaScript for the creation of the templates. We worked with another team who acted as "the customers", and we had to ensure we were delivering key features. Overall, we learned software engineering encapsulates a lot of concepts, including project management, design, implementation, documentation, communication, and much more.
+**Key Takeaways:** Over the course of the semester, we learned many things about software engineering. Concepts like the Agile Methodology and Continuous Integration shaped how we worked on the application. Project management tools like Zenhub (Project Board) and Git/GitHub helped us to organize our project and plan for new features. We had to learn how to work as a team, and we did this by frequent communication through Discord, in-person meetings, assessment of our teammates through Kritik to ensure equal contribution, and choosing a project leader for each sprint to lead the group. With Django chosen as our framework, we learned a lot about the MVT architecture and Python in general. We also touched on HTML, CSS, and JavaScript for the creation of the templates. We worked with another team who acted as "the customers", and we had to ensure we were delivering key features. Overall, we learned software engineering encapsulates a lot of concepts, including project management, design, implementation, documentation, communication, and much more.
 
 ## Running the Project 🎬
 
@@ -55,7 +55,7 @@
 4. Hook up OpenAI API key:
 
    1. Create a .env file in the `chit-chatty-app/chitchatty/` directory.
-   2. On the first line, add `OPENAI_API_KEY=yourkeyhere`, replacing the `yourkeyhere` with your key.
+   2. On the first line, add "OPENAI_API_KEY=yourkeyhere", replacing the "yourkeyhere" with your key.
 
 5. Run migrations:
 
