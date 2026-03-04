@@ -1,4 +1,4 @@
-# Chit-Chatty Language Learning Application
+# Chit-Chatty
 
 ##### Created by Darion Badillo, Andrew Douangprachanh, Irving Reyes Bravo, Naomi Rodriguez, and Christopher Romo
 ##### CS 4300 Advanced Software Engineering : Group 5 : Fall 2024
