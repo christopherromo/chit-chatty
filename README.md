@@ -54,7 +54,7 @@
 
 4. Hook up OpenAI API key:
 
-   1. Create a .env file in the `chit-chatty-app/chitchatty/` directory.
+   1. Create a .env file in the `chit-chatty/chitchatty/` directory.
    2. On the first line, add "OPENAI_API_KEY=yourkeyhere", replacing the "yourkeyhere" with your key.
 
 5. Run migrations:
