@@ -39,37 +39,36 @@
 
 1. Clone the repository.
 
-2. Create a virtual environment:
+2. Ensure Python is installed on your computer.
+   
+3. Hook up OpenAI API key:
+   1. Create a .env file in the `chit-chatty/chitchatty/` directory.
+   2. On the first line, add "OPENAI_API_KEY=yourkeyhere", replacing the "yourkeyhere" with your key.
 
+4. Open a terminal in the `chit-chatty` directory.
+         
+5. Create a virtual environment:
    ```bash
    python -m venv venv
    source venv/bin/activate
    ```
 
-3. Install dependencies:
-
+6. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Hook up OpenAI API key:
-
-   1. Create a .env file in the `chit-chatty/chitchatty/` directory.
-   2. On the first line, add "OPENAI_API_KEY=yourkeyhere", replacing the "yourkeyhere" with your key.
-
-5. Run migrations:
-
+7. Run migrations:
    ```bash
    python manage.py migrate
    ```
 
-6. Run the server:
-
+8. Run the server:
    ```bash
    python manage.py runserver
    ```
 
-7. Access the app at `http://127.0.0.1:8000`.
+9. Access the app at `http://127.0.0.1:8000`.
 
 ---
 
