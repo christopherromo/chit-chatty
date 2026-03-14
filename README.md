@@ -39,7 +39,7 @@
 
 1. Clone the repository.
 
-2. Ensure Python is installed on your computer.
+2. Ensure Python (3.10+) is installed on your computer.
    
 3. Hook up OpenAI API key:
    1. Create a .env file in the `chit-chatty/chitchatty/` directory.
@@ -60,6 +60,7 @@
 
 7. Run migrations:
    ```bash
+   cd chitchatty
    python manage.py migrate
    ```
 
